@@ -31,6 +31,7 @@ $sql = "
     FROM products p
     LEFT JOIN price_logs pl ON p.product_id = pl.product_id 
         AND pl.date = p.date
+    WHERE p.date BETWEEN '2020-01-01' AND '2020-01-10'
     GROUP BY p.date
     ORDER BY p.date;
 ";
