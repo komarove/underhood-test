@@ -1,5 +1,34 @@
 # Test Task for underhood.dev
 
+# Requirements
+- php 8.1
+- mysql 5.7^
+- 
+
+# How to run
+- Create .env file and copy content from `.env.example` and put your database config.
+- Run `composer install`
+- Run `php migrate.php` to create tables.
+- Run `php seed.php` to fill tables.
+
+## Result for task #1
+- Run ``php .\src\App.php``
+
+Output:
+```
+Date: 2020-01-01, Total Value: 63750
+Date: 2020-01-02, Total Value: 73250
+Date: 2020-01-03, Total Value: 41753
+Date: 2020-01-04, Total Value: 239500
+Date: 2020-01-05, Total Value: 181241
+Date: 2020-01-06, Total Value: 181241
+Date: 2020-01-07, Total Value: 168430
+Date: 2020-01-08, Total Value: 115651
+Date: 2020-01-09, Total Value: 43332
+Date: 2020-01-10, Total Value: 266950
+```
+
+
 ## Task 1
 
 Написать SQL запрос, который выведет за каждый день с 2020-01-01 по 2020-01-10 стоимость всех
@@ -51,14 +80,14 @@ CREATE TABLE products (
    ("2020-01-10",1,1000),
    ("2020-01-10",2,10000),
    ("2020-01-10",3,50);
-   CREATE TABLE price_log (
+   CREATE TABLE price_logs (
    id INT NOT NULL AUTO_INCREMENT,
    date DATE,
    product_id INT NOT NULL,
    price INT NOT NULL,
    PRIMARY KEY (id)
    );
-   INSERT INTO price_log
+   INSERT INTO price_logs
    (
    date,
    product_id,
@@ -105,3 +134,4 @@ Results: 913
  << тут следующие подобные данные >>
 ]
 ```
+
